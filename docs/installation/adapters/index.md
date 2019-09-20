@@ -23,3 +23,4 @@ Meshery has adapters for managing the following service meshes.
 | [Maesh](maesh.md) | |
 | [Network Service Mesh](nsm.md) |  |
 | [Octarine](octarine.md) | |
+| [Kuma](kuma.md) | |
