@@ -87,7 +87,7 @@ var startCmd = &cobra.Command{
 				// }
 
 				if runtime.GOOS == "windows" {
-					exec.Command("start", url).Start()
+					exec.Command("rundll32", "url.dll,FileProtocolHandler", url).Start()
 				} else if runtime.GOOS == "linux" {
 					exec.Command("xdg-open", url).Start()
 				} else {
