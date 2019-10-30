@@ -105,7 +105,7 @@ class MeshConfigComponent extends React.Component {
         k8sfile, // read from store
         k8sfileElementVal: '',
         contextName, // read from store
-        contextNameForForm: null,
+        contextNameForForm: '',
         contextsFromFile: [],
     
         clusterConfigured, // read from store
@@ -169,7 +169,7 @@ class MeshConfigComponent extends React.Component {
       return;
     }
     if(fileInput.files.length == 0){
-      this.setState({contextsFromFile: [], contextNameForForm: null});
+      this.setState({contextsFromFile: [], contextNameForForm: ''});
       return;
     }
     // formData.append('contextName', contextName);
@@ -191,6 +191,7 @@ class MeshConfigComponent extends React.Component {
             }
           });
           self.setState({contextsFromFile: result, contextNameForForm: ctName});
+          self.submitConfig();
       }
     }, self.handleError);
   }
@@ -273,7 +274,7 @@ class MeshConfigComponent extends React.Component {
         k8sfileElementVal: '',
         k8sfileError: false,
         contextName: '', 
-        contextNameForForm: null,
+        contextNameForForm: '',
         clusterConfigured: false,
       })
       this.props.updateK8SConfig({k8sConfig: {inClusterConfig: false, k8sfile:'', contextName:'', clusterConfigured: false}});
