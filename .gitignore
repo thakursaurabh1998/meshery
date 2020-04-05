@@ -17,7 +17,7 @@ mesheryctl/.meshery/
 
 .DS_Store
 
-.vscode/
+.vscode
 
 config
 
